@@ -2,7 +2,7 @@
 ================================
 Maintainer : Dam Quang Tuan (damquangtuan1985@gmail.com)
 
-Contributor : Lee Wongun (inamind@gmail.com), Dam Quang Tuan (damquangtuan1985@gmail.com)
+Contributor : Lee Wongun (inamind@gmail.com), Dam Quang Tuan (damquangtuan1985@gmail.com), Hankeun Son (s32francisco@gmail.com)
 
 ### Reference:
 Wongun Lee, Keonwoo Lee, Hankeun Son, Wook-Hee Kim, Beomseok Nam, Youjip Won, “WALDIO: Eliminating the Filesystem Journaling in Resolving the Journaling of Journal Anomaly”,  In Proceedings of  USENIX ATC(Annual Technical Conference), Santa Clara, CA, July 8 – 10, 2015
@@ -20,3 +20,11 @@ WALDIO mode achieves 5.1× performance (insert/sec) against WAL mode which is th
 
 WALDIO mode does not cost any major changes on the existing interface definitions of SQLite or of the filesystem, nor the intro-
 duction of the new ones. It is achieved by the minimal set of right modifications of the current WAL mode. Users who want to use4 WALDIO should use the current WAL mode as the option.
+
+
+ext4 Discard kernel patch for WALDIO
+-----------------------------------
+This patch is based on NO_HIDE_STALE patch by Ted Ts'o.
+As this patch apply to kernel, WALDIO allocate files before request with DISCARD command to solve security issue for file contents.
+Unfortunately, It find only direct node now, so if db file size increase to indirect node this patch can some error.
+We will fix this bug rapidly.
