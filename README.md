@@ -26,5 +26,5 @@ EXT4 Discard kernel patch for WALDIO
 -----------------------------------
 This patch is based on NO_HIDE_STALE patch by Ted Ts'o.
 As this patch apply to kernel, WALDIO allocate files before request with DISCARD command to solve security issue for file contents.
-Unfortunately, It find only direct node now, so if db file size increase to indirect node this patch can some error.
+Unfortunately, It finds only direct node now, so if database file size increases to indirect node this patch can cause some error.
 We will fix this bug rapidly.
