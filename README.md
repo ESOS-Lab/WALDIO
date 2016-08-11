@@ -22,9 +22,9 @@ WALDIO mode does not cost any major changes on the existing interface definition
 duction of the new ones. It is achieved by the minimal set of right modifications of the current WAL mode. Users who want to use4 WALDIO should use the current WAL mode as the option.
 
 
-ext4 Discard kernel patch for WALDIO
+EXT4 Discard kernel patch for WALDIO
 -----------------------------------
 This patch is based on NO_HIDE_STALE patch by Ted Ts'o.
 As this patch apply to kernel, WALDIO allocate files before request with DISCARD command to solve security issue for file contents.
-Unfortunately, It find only direct node now, so if db file size increase to indirect node this patch can some error.
+Unfortunately, It finds only direct node now, so if database file size increases to indirect node this patch can cause some error.
 We will fix this bug rapidly.
