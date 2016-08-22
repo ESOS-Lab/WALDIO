@@ -18,8 +18,7 @@ This work is dedicated to resolve the Journaling of Journal Anomaly in Android I
 WALDIO mode achieves 5.1× performance (insert/sec) against WAL mode which is the fastest journaling mode in SQLite. It yields 2.7× performance (inserts/sec) against the LS-MVBT, the fastest SQLite journaling mode known to public. WALDIO mode achieves
 7.4× performance (insert/sec) against WAL mode when it is relieved from the overhead of explicitly synchronizing individual log-commit operations. WALDIO mode reduces the IO volume to 1/6 compared against the WAL mode.
 
-WALDIO mode does not cost any major changes on the existing interface definitions of SQLite or of the filesystem, nor the intro-
-duction of the new ones. It is achieved by the minimal set of right modifications of the current WAL mode. Users who want to use4 WALDIO should use the current WAL mode as the option.
+User now can use WALDIO as a separate mode in SQLite along with WAL mode by using command "pragma journal_mode=waldio"
 
 
 EXT4 Discard kernel patch for WALDIO
